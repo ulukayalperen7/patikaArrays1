@@ -1,0 +1,95 @@
++--------------------------------+
+|          Building              |
++--------------------------------+
+| - totalFloors: int             |
+| - elevators: Elevator[]        |
+| - callButtons: CallButton[]    |
+| - clock: Clock                 |
++--------------------------------+
+| + simulate(): void             |
++--------------------------------+
+
++--------------------------------+
+|          Elevator              |
++--------------------------------+
+| - elevatorID: int              |
+| - currentFloor: int            |
+| - direction: String            |  <--- ("up", "down", "idle")
+| - passengers: Passenger[]      |
+| - maxCapacity: int             |
+| - doors: Door                  |
+| - controlPanel: ControlPanel   |
+| - positionIndicator: Indicator |
++--------------------------------+
+| + move(): void                 |
+| + openDoors(): void            |
+| + closeDoors(): void           |
+| + assignFloor(floor: int): void|
++--------------------------------+
+
++--------------------------------+
+|       ControlPanel             |
++--------------------------------+
+| - targetButtons: Button[]      |
+| - emergencyButton: Button      |
+| - openDoorButton: Button       |
+| - closeDoorButton: Button      |
++--------------------------------+
+| + pressButton(floor: int): void|
+| + pressEmergency(): void       |
++--------------------------------+
+
++--------------------------------+
+|           Door                 |
++--------------------------------+
+| - doorID: int                  |
+| - isOpen: boolean              |
++--------------------------------+
+| + open(): void                 |
+| + close(): void                |
++--------------------------------+
+
++--------------------------------+
+|          Indicator             |
++--------------------------------+
+| - floorNumber: int             |
+| - direction: String            |  <--- ("up", "down")
++--------------------------------+
+| + showDirection(): void        |
+| + showFloor(): void            |
++--------------------------------+
+
++--------------------------------+
+|         Passenger              |
++--------------------------------+
+| - passengerID: int             |
+| - startFloor: int              |
+| - destinationFloor: int        |
++--------------------------------+
+| + requestElevator(): void      |
+| + selectFloor(floor: int): void|
++--------------------------------+
+
++--------------------------------+
+|        CallButton              |
++--------------------------------+
+| - floor: int                   |
+| - direction: String            |  <--- ("up", "down")
++--------------------------------+
+| + press(): void                |
++--------------------------------+
+
++--------------------------------+
+|            Clock               |
++--------------------------------+
+| - currentTime: Time            |
++--------------------------------+
+| + tick(): void                 |
++--------------------------------+
+
++--------------------------------+
+|    RandomNumberGenerator       |
++--------------------------------+
+| + generate(): int              |
+| + generateBetween(min, max): int|
++--------------------------------+

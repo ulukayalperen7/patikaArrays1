@@ -1,0 +1,56 @@
++--------------------------+
+|         Airline           |
++--------------------------+
+| - airlineID: String       |
+| - name: String            |
++--------------------------+
+| + getFlights(): Flight[]  |
++--------------------------+
+         |
+         | has many
+         |
++-------------------------+
+|        Airplane          |
++-------------------------+
+| - airplaneID: String     |
+| - type: String           |
+| - status: String         |  <--- ("operational", "under repair")
++-------------------------+
+| + getStatus(): String    |
++-------------------------+
+         |
+         | operated by
+         |
++-------------------------+
+|         Flight           |
++-------------------------+
+| - flightID: String       |
+| - departureAirport: Airport|
+| - arrivalAirport: Airport |
+| - departureTime: DateTime |
+| - arrivalTime: DateTime   |
++-------------------------+
+| + getSchedule(): String  |
++-------------------------+
+         |
+         | flown by
+         |
++-------------------------+  +-------------------------+
+|        Pilot            |  |   CoPilot (Pilot)        |
++-------------------------+  +-------------------------+
+| - pilotID: String       |  |                         |
+| - experienceLevel: int  |  |                         |
++-------------------------+  +-------------------------+
+| + getExperience(): int  |  |                         |
++-------------------------+  +-
+         |
+         | associated with
+         |
++-------------------------+
+|        Airport           |
++-------------------------+
+| - airportID: String      |
+| - name: String           |
++-------------------------+
+| + getName(): String      |
++-------------------------+

@@ -1,0 +1,45 @@
++----------------------------+
+|          Movie              |
++----------------------------+
+| - movieID: String           |
+| - title: String             |
+| - genre: String             |
+| - price: double             |
+| - available: boolean        |
++----------------------------+
+| + listMovies(): Movie[]     |
+| + sortMovies(criteria): Movie[]|
+| + requestMovie(): void      |
++----------------------------+
+
++----------------------------+
+|         User                |
++----------------------------+
+| - userID: String            |
+| - name: String              |
+| - email: String             |
+| - balance: double           |
++----------------------------+
+| + purchaseMovie(movieID): void |
+| + requestMovie(movieID): void  |
+| + addCredit(amount): void      |
++----------------------------+
+          |
+          | extends
+          |
++----------------------------+
+|      Subscriber             |
++----------------------------+
+| - subscriptionID: String    |
+| - credits: double           |
++----------------------------+
+| + rentMovie(movieID): void   |
+| + deductCredits(amount): void|
++----------------------------+
+
++----------------------------+
+|         System              |
++----------------------------+
+| + manageUsers(): void       |
+| + manageMovies(): void      |
++----------------------------+
